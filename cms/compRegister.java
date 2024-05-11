@@ -51,7 +51,7 @@ class compRegister extends JFrame implements ActionListener{
         c.add(email);
 
         emailField=new JTextField();
-        emailField.setBounds(130,150,100,20);
+        emailField.setBounds(130,150,200,20);
         c.add(emailField);
 
         course =new JLabel("Course");
@@ -150,7 +150,7 @@ class compRegister extends JFrame implements ActionListener{
 
             String name = nameField.getText();
             String Mobile  = mobileField.getText();
-            String Email = email.getText();
+            String Email = emailField.getText();
             String Department = dept.getText();
             String Complaint_Type= (String)ComplaintType.getSelectedItem();
             String Course=(String)courseType.getSelectedItem();
