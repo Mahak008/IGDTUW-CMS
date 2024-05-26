@@ -44,6 +44,6 @@ public class AdminProfile extends JFrame {
     }
 
     private void displayComplaints() {
-    	new compReport(cfile);
+    	//new compReport(cfile);
     }
 }
