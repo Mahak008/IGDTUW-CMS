@@ -81,37 +81,47 @@ The University Complaint Management System is a Java-based application designed 
   <tr>
     <td  align="center">
       <h4>Anisha</h4>
-        <a href="https://github.com/Miss-Anisha">Github</a>
+        <a href="https://github.com/Miss-Anisha">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="Miss-Anisha" height="30" width="40" />
+        </a>
         <a href="https://www.linkedin.com/in/anisha-premi/">
           <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
         </a>
     </td>
     <td  align="center">
       <h4>Bharti Rana</h4>
-        <a href="https://github.com/bharti2430">Github</a>
+        <a href="https://github.com/bharti2430">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="bharti2430" height="30" width="40" />
+        </a>
         <a href="https://www.linkedin.com/in/bharti-rana304/">
           <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
         </a>
     </td>
     <td  align="center">
       <h4>Mahak Garg</h4>
-        <a href="https://github.com/Mahak008">Github</a>
+        <a href="https://github.com/Mahak008">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="Mahak008" height="30" width="40" />
+        </a>
         <a href="https://linkedin.com/in/mahakgarg" target="_blank">
           <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
         </a>
     </td>
     <td  align="center">
       <h4>Sapna Singhal</h4>
-        <a href="https://www.github.com/sapnasinghal22">Github</a>
+        <a href="https://www.github.com/sapnasinghal22">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="sapnasinghal22" height="30" width="40" />
+        </a>
         <a href="https://www.linkedin.com/in/sapnasinghal-/">
-          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="sapnasinghal-/" height="30" width="40">
         </a>
     </td>
     <td  align="center">
       <h4>Shruti Jain</h4>
-        <a href="https://www.github.com/">Github</a>
+        <a href="https://github.com/shrutijn02">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="shrutijn02" height="30" width="40" />
+        </a>
         <a href="https://www.linkedin.com/in/shruti-jain-a0840724a/">
-          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="shruti-jain-a0840724a" height="30" width="40" />
         </a>
     </td>
   </tr>
