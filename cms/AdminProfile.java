@@ -77,7 +77,6 @@ public class AdminProfile extends JFrame {
     }
 
     private void loadComplaints() {
-        // Clear existing complaints
         complaintPanel.removeAll();
         complaintPanel.revalidate();
         complaintPanel.repaint();
@@ -94,9 +93,11 @@ public class AdminProfile extends JFrame {
                 String complaintText = rs.getString("complaint");
                 int complaintId = rs.getInt("cno");
 
-                JPanel complaintEntry = new JPanel(new BorderLayout());
+                
+                JPanel complaintEntry = new JPanel(new FlowLayout(FlowLayout.LEFT)); // Use FlowLayout to align components left
                 complaintEntry.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 complaintEntry.setMaximumSize(new Dimension(Short.MAX_VALUE, 100));
+
 
                 JLabel nameLabel = new JLabel("Name: " + name);
                 JLabel typeLabel = new JLabel("Type: " + complaintType);
@@ -104,11 +105,16 @@ public class AdminProfile extends JFrame {
                 complaintArea.setEditable(false);
                 JButton approveButton = new JButton("Approve");
                 approveButton.addActionListener(new ApproveButtonListener(complaintId));
+                
+                JButton rejectButton = new JButton("Reject");
+                rejectButton.addActionListener(new RejectButtonListener(complaintId));
 
-                complaintEntry.add(nameLabel, BorderLayout.NORTH);
-                complaintEntry.add(typeLabel, BorderLayout.WEST);
-                complaintEntry.add(complaintArea, BorderLayout.CENTER);
-                complaintEntry.add(approveButton, BorderLayout.EAST);
+             // Add components to the complaint entry panel
+                complaintEntry.add(nameLabel);
+                complaintEntry.add(typeLabel);
+                complaintEntry.add(complaintArea);
+                complaintEntry.add(rejectButton);
+                complaintEntry.add(approveButton);
 
                 complaintPanel.add(complaintEntry);
             }
@@ -139,6 +145,28 @@ public class AdminProfile extends JFrame {
                 pstmt.close();
                 conn.close();
                 loadComplaints(); // Reload complaints after approval
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+    private class RejectButtonListener implements ActionListener {
+        private int complaintId;
+
+        public RejectButtonListener(int complaintId) {
+            this.complaintId = complaintId;
+        }
+
+        public void actionPerformed(ActionEvent e) {
+            try {
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "Bharti@304");
+                String query = "UPDATE complaints SET status = 'Rejected' WHERE cno = ?";
+                PreparedStatement pstmt = conn.prepareStatement(query);
+                pstmt.setInt(1, complaintId);
+                pstmt.executeUpdate();
+                pstmt.close();
+                conn.close();
+                loadComplaints(); // Reload complaints after rejection
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }

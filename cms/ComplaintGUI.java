@@ -8,7 +8,6 @@ public class ComplaintGUI implements ActionListener, WindowListener {
 	private JFrame win;
 	private JButton menuBtns[];
 	private String loggedInEmail;
-	private JLabel profileLabel;
 
 	public ComplaintGUI(String loggedInEmail) {
 		this.loggedInEmail=loggedInEmail;
@@ -116,6 +115,6 @@ public class ComplaintGUI implements ActionListener, WindowListener {
 	}
 	
 	public static void main(String[] args) {
-		new ComplaintGUI("bharti017mca23@igdtuw.ac.in");
+		new ComplaintGUI("sapna058mca23@igdtuw.ac.in");
 	}
 }
