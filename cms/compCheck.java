@@ -1,92 +1,94 @@
 package cms;
 
-import java.awt.GridLayout;
-import java.awt.Dialog.ModalityType;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import java.awt.*;
+import java.sql.*;
 
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+class compCheck extends JFrame {
+    private static final long serialVersionUID = 1L;
+    JTable table;
+    JScrollPane scrollPane;
 
-public class compCheck implements ActionListener {
-	private JDialog win;
-	private compFile cfile;
-	private JTextArea taSoln;
-	private JTextField tfCompNum;
-	private JButton submitBtn;
+    compCheck() {
+        setTitle("View All Complaints");
+        setSize(1000, 600);
+        setLocationRelativeTo(null);
+        Container c = getContentPane();
+        c.setLayout(new BorderLayout());
 
-	public compCheck(compFile cfile) {
-		this.cfile = cfile;
-		win = new JDialog();
-		win.setModalityType(ModalityType.APPLICATION_MODAL);
-		win.setTitle("Complaints Filed");
-		win.setSize(500, 500);
-		win.setLayout(new GridLayout(2, 1));
+        // Table headers
+        String[] columnNames = {"Complaint Number", "Complaint Type", "Complaint", "Status", "Course", "Department"};
 
-		JTable tableAllComps = cfile.returnTable();
-		tableAllComps.setEnabled(false);
+        // Fetch data from database
+        String[][] data = fetchData();
 
-		tfCompNum = new JTextField(40);
+        // Create table with data
+        table = new JTable(data, columnNames);
 
-		taSoln = new JTextArea(7, 40);
+        // Customize table header
+        table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 12));
+        table.getTableHeader().setDefaultRenderer(new HeaderRenderer(table));
 
-		submitBtn = new JButton("Submit");
-		submitBtn.addActionListener(this);
+        scrollPane = new JScrollPane(table);
+        c.add(scrollPane, BorderLayout.CENTER);
 
-		JPanel panel = new JPanel();
-		panel.add(new JLabel("Complaint No. "));
-		panel.add(tfCompNum);
-		panel.add(new JLabel("Solution "));
-		panel.add(new JScrollPane(taSoln));
-		panel.add(submitBtn);
+        setVisible(true);
+    }
 
-		win.add(new JScrollPane(tableAllComps));
-		win.add(panel);
+    private String[][] fetchData() {
+        String[][] data = null;
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "Bharti@304");
+            String query = "SELECT cno, complaint_type, complaint, status, course, dept FROM complaints";
+            PreparedStatement pstmt = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = pstmt.executeQuery();
 
-		win.setVisible(true);
-	}
+            // Determine number of rows
+            rs.last();
+            int rowCount = rs.getRow();
+            rs.beforeFirst();
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (submitBtn == (JButton) e.getSource()) {
-			boolean flag = true;
-			int cno = 0;
-			String sol = taSoln.getText();
-			try {
-				cno = Integer.parseInt(tfCompNum.getText());
-			} catch (Exception exc) {
-				flag = false;
-				JOptionPane.showMessageDialog(null, "Invalid Complaint No");
-			}
-			if (flag) {
-				if (!cfile.findComp(cno)) {
-					JOptionPane.showMessageDialog(null, "No Complaint exist for given Complain No.");
-				} else if (sol.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Solution cant be empty");
-				} else // Everything right
-				{
-					try {
-						cfile.addSoln(cno, sol);
-						JOptionPane.showMessageDialog(null, "Successfully Added");
-					} catch (Exception e1) {
-						int opt = JOptionPane.showConfirmDialog(null, "Solution Already Exists. Overwrite?");
-						if (opt == JOptionPane.YES_OPTION) {
-							cfile.overwriteSoln(cno, sol);
-							JOptionPane.showMessageDialog(null, "Successfully Overwrited");
-						}
-					}
-				}
-			}
-			if (flag) {
-				win.dispose();
-			}
-		}
-	}
+            // Initialize data array
+            data = new String[rowCount][6];
+            int row = 0;
+
+            while (rs.next()) {
+                data[row][0] = rs.getString("cno");
+                data[row][1] = rs.getString("complaint_type");
+                data[row][2] = rs.getString("complaint");
+                data[row][3] = rs.getString("status");
+                data[row][4] = rs.getString("course");
+                data[row][5] = rs.getString("dept");
+                row++;
+            }
+
+            // Close resources
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return data;
+    }
+
+    // Custom header renderer
+    class HeaderRenderer extends DefaultTableCellRenderer {
+        private static final long serialVersionUID = 1L;
+
+        public HeaderRenderer(JTable table) {
+            setHorizontalAlignment(JLabel.CENTER);
+            setForeground(table.getTableHeader().getForeground());
+            setBackground(table.getTableHeader().getBackground());
+            setFont(table.getTableHeader().getFont());
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col) {
+            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
+            c.setFont(c.getFont().deriveFont(Font.BOLD));
+            return c;
+        }
+    }
 }

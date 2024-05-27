@@ -1,66 +1,93 @@
 package cms;
 
-import java.awt.GridLayout;
-import java.awt.Dialog.ModalityType;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import java.awt.*;
+import java.sql.*;
 
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+class compStatus extends JFrame {
+    private static final long serialVersionUID = 1L;
+    JTable table;
+    JScrollPane scrollPane;
 
-public class compStatus implements ActionListener {
-	private JDialog win;
-	private compFile cfile;
-	private int compNum;
-	private JTextField tfCompNum;
-	private JTextArea taStatus;
+    compStatus(String loggedInEmail) {
+        setTitle("View Complaints");
+        setSize(800, 600);
+        setLocationRelativeTo(null);
+        Container c = getContentPane();
+        c.setLayout(new BorderLayout());
 
-	public compStatus(compFile cfile) {
-		win = new JDialog();
-		win.setModalityType(ModalityType.APPLICATION_MODAL);
-		win.setTitle("Complaint Status");
-		win.setSize(500, 300);
-		win.setLayout(new GridLayout(2, 1));
-		this.cfile = cfile;
+        // Table headers
+        String[] columnNames = {"Complaint Number", "Complaint Type", "Complaint", "Status"};
 
-		tfCompNum = new JTextField(20);
-		tfCompNum.addActionListener(this);
+        // Fetch data from database
+        String[][] data = fetchData(loggedInEmail);
 
-		taStatus = new JTextArea(5, 40);
-		taStatus.setEditable(false);
+        // Create table with data
+        table = new JTable(data, columnNames);
+        
+        // Customize table header
+        table.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 12));
+        table.getTableHeader().setDefaultRenderer(new HeaderRenderer(table));
 
-		JPanel panel1 = new JPanel();
-		panel1.add(new JLabel("Enter Complaint No. : "));
-		panel1.add(tfCompNum);
+        scrollPane = new JScrollPane(table);
+        c.add(scrollPane, BorderLayout.CENTER);
 
-		JPanel panel2 = new JPanel();
-		panel2.add(new JLabel("Status "));
-		panel2.add(new JScrollPane(taStatus));
+        setVisible(true);
+    }
 
-		win.add(panel1);
-		win.add(panel2);
+    private String[][] fetchData(String loggedInEmail) {
+        String[][] data = null;
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "Bharti@304");
+            String query = "SELECT cno, complaint_type, complaint, status FROM complaints WHERE email = ?";
+            PreparedStatement pstmt = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            pstmt.setString(1, loggedInEmail);
+            ResultSet rs = pstmt.executeQuery();
 
-		win.setVisible(true);
-	}
+            // Determine number of rows
+            rs.last();
+            int rowCount = rs.getRow();
+            rs.beforeFirst();
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		try {
-			this.compNum = Integer.parseInt(tfCompNum.getText());
-			String status = cfile.getSoln(compNum);
-			if (status == null) {
-				status = "Invalid Complaint No.";
-			} else if (status.isEmpty()) {
-				status = "No Solution found for given complaint number";
-			}
-			taStatus.setText(status);
-		} catch (Exception exc) {
-			taStatus.setText("Invalid Complaint No.");
-		}
-	}
+            // Initialize data array
+            data = new String[rowCount][4];
+            int row = 0;
 
+            while (rs.next()) {
+                data[row][0] = rs.getString("cno");
+                data[row][1] = rs.getString("complaint_type");
+                data[row][2] = rs.getString("complaint");
+                data[row][3] = rs.getString("status");
+                row++;
+            }
+
+            // Close resources
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return data;
+    }
+
+    // Custom header renderer
+    class HeaderRenderer extends DefaultTableCellRenderer {
+        private static final long serialVersionUID = 1L;
+
+        public HeaderRenderer(JTable table) {
+            setHorizontalAlignment(JLabel.CENTER);
+            setForeground(table.getTableHeader().getForeground());
+            setBackground(table.getTableHeader().getBackground());
+            setFont(table.getTableHeader().getFont());
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col) {
+            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
+            c.setFont(c.getFont().deriveFont(Font.BOLD));
+            return c;
+        }
+    }
 }

@@ -2,8 +2,7 @@ package cms;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.sql.*;
 
 class compRegister extends JFrame implements ActionListener{
@@ -26,7 +25,6 @@ class compRegister extends JFrame implements ActionListener{
         setTitle("Complaint Registration From");
         setSize(700,600);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         Container c = getContentPane();
         c.setLayout(null);
 
@@ -151,7 +149,7 @@ class compRegister extends JFrame implements ActionListener{
             String name = nameField.getText();
             String Mobile  = mobileField.getText();
             String Email = emailField.getText();
-            String Department = dept.getText();
+            String Department = deptField.getText();
             String Complaint_Type= (String)ComplaintType.getSelectedItem();
             String Course=(String)courseType.getSelectedItem();
             String Complaint = textArea.getText();

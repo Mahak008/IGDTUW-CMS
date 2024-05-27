@@ -1,37 +1,53 @@
 package cms;
 
-import java.awt.BorderLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class ComplaintGUI implements ActionListener, WindowListener {
 	private JFrame win;
-	private compFile cfile;
 	private JButton menuBtns[];
 	private String loggedInEmail;
+	private JLabel profileLabel;
 
 	public ComplaintGUI(String loggedInEmail) {
 		this.loggedInEmail=loggedInEmail;
 		win = new JFrame();
-		String tmpPath = System.getProperty("java.io.tmpdir");
-		cfile = new compFile(tmpPath + "comps.txt");
 		
 		// Heading Panel
         JPanel headingPanel = new JPanel();
         JLabel headingLabel = new JLabel("<html><center>Student Dashboard</center></html>");
         headingLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        headingLabel.setBackground(new Color(173, 216, 230));
+        headingLabel.setOpaque(true);
         headingPanel.add(headingLabel);
-        win.add(headingPanel, BorderLayout.NORTH);
+        win.add(headingPanel, BorderLayout.CENTER);
+        
+        
+     // Menu bar 
+        JMenuBar menuBar = new JMenuBar();
+
+        // Options menu
+        JMenu optionsMenu = new JMenu("Options");
+        JMenuItem logoutMenuItem = new JMenuItem("Logout");
+        logoutMenuItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Code to handle logout
+                win.dispose(); // Close the student dashboard window
+                new StudentLogin(); // Redirect to login screen
+            }
+        });
+        optionsMenu.add(logoutMenuItem);
+        menuBar.add(optionsMenu);
+
+        // Profile menu
+        JMenu profileMenu = new JMenu("Logged in as: ");
+        profileMenu.setEnabled(true); // To make it non-clickable
+        profileMenu.add(loggedInEmail);
+        menuBar.add(Box.createHorizontalGlue()); // To push the profile menu to the right
+        menuBar.add(profileMenu);
+
+        win.setJMenuBar(menuBar);
 
 		win.setTitle("Complaint Box");
 		win.setSize(500, 600);
@@ -56,9 +72,9 @@ public class ComplaintGUI implements ActionListener, WindowListener {
 		if (menuBtns[0] == e.getSource()) {
 			new compRegister(loggedInEmail);
 		} else if (menuBtns[1] == e.getSource()) {
-			new compStatus(cfile);
+			new compStatus(loggedInEmail);
 		} else if (menuBtns[2] == e.getSource()) {
-				new compCheck(cfile);
+				new compCheck();
 		} else if (menuBtns[3] == e.getSource()) {
 			new StudentProfile(loggedInEmail);
 		}
@@ -76,7 +92,7 @@ public class ComplaintGUI implements ActionListener, WindowListener {
 
 	@Override
 	public void windowClosed(WindowEvent e) {
-		cfile.exit();
+		
 	}
 
 	@Override
@@ -98,6 +114,7 @@ public class ComplaintGUI implements ActionListener, WindowListener {
 	public void windowDeactivated(WindowEvent e) {
 		// TODO Auto-generated method stub
 	}
+	
 	public static void main(String[] args) {
 		new ComplaintGUI("bharti017mca23@igdtuw.ac.in");
 	}
