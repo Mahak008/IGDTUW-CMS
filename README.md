@@ -85,7 +85,7 @@ The University Complaint Management System is a Java-based application designed 
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="Miss-Anisha" height="30" width="40" />
         </a>
         <a href="https://www.linkedin.com/in/anisha-premi/">
-          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/LinkedIn.svg" alt="anisha-premi" height="30" width="40">
         </a>
     </td>
     <td  align="center">
@@ -94,7 +94,7 @@ The University Complaint Management System is a Java-based application designed 
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="bharti2430" height="30" width="40" />
         </a>
         <a href="https://www.linkedin.com/in/bharti-rana304/">
-          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/LinkedIn.svg" alt="bharti-rana304" height="30" width="40">
         </a>
     </td>
     <td  align="center">
@@ -103,7 +103,7 @@ The University Complaint Management System is a Java-based application designed 
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="Mahak008" height="30" width="40" />
         </a>
         <a href="https://linkedin.com/in/mahakgarg" target="_blank">
-          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/LinkedIn.svg" alt="mahakgarg" height="30" width="40">
         </a>
     </td>
     <td  align="center">
@@ -112,7 +112,7 @@ The University Complaint Management System is a Java-based application designed 
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="sapnasinghal22" height="30" width="40" />
         </a>
         <a href="https://www.linkedin.com/in/sapnasinghal-/">
-          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="sapnasinghal-/" height="30" width="40">
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/LinkedIn.svg" alt="sapnasinghal-/" height="30" width="40">
         </a>
     </td>
     <td  align="center">
@@ -121,7 +121,7 @@ The University Complaint Management System is a Java-based application designed 
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="shrutijn02" height="30" width="40" />
         </a>
         <a href="https://www.linkedin.com/in/shruti-jain-a0840724a/">
-          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="shruti-jain-a0840724a" height="30" width="40" />
+          <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/LinkedIn.svg" alt="shruti-jain-a0840724a" height="30" width="40" />
         </a>
     </td>
   </tr>
