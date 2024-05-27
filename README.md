@@ -23,13 +23,13 @@ The University Complaint Management System is a Java-based application designed 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/university-complaint-management.git
+    git clone https://github.com/yourusername/IGDTUW-CMS.git
     ```
 
 2. **Navigate to the project directory:**
 
     ```bash
-    cd university-complaint-management
+    cd IGDTUW-CMS.git
     ```
 
 3. **Set up the database:**
@@ -63,9 +63,7 @@ The University Complaint Management System is a Java-based application designed 
         ```bash
         mvn tomcat7:deploy
         ```
-
-    - Ensure your Tomcat server is running and accessible. The application should be available at `http://localhost:8080/your-app-context`.
-
+        
 6. **Access the application:**
     - Open your web browser and navigate to `http://localhost:8080/your-app-context`.
     - Students can register, log in, and submit complaints.
