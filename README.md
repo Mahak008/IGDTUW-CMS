@@ -80,6 +80,7 @@ The University Complaint Management System is a Java-based application designed 
 <table>
   <tr>
     <td  align="center">
+      <img src="![WhatsApp Image 2024-05-27 at 19 01 07_9770d72e](https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/1e0d21ff-b940-49f0-a1c9-3eeef9729856)" width=150px height=150px />
       <h4>Anisha</h4>
         <a href="https://github.com/Miss-Anisha">
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="Miss-Anisha" height="30" width="40" />
