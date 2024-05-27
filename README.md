@@ -18,8 +18,8 @@
         <a href="https://linkedin.com/in/mahakgarg/">Linkedin</a>
     </td>
     <td  align="center">
-      <h4>Sapna</h4>
-        <a href="https://www.github.com/">Github</a>
+      <h4>Sapna Singhal</h4>
+        <a href="https://www.github.com/sapnasinghal22">Github</a>
         <a href="https://www.linkedin.com/in/sapnasinghal-/">Linkedin</a>
     </td>
     <td  align="center">
