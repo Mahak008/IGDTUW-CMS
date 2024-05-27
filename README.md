@@ -1,4 +1,25 @@
-## Project Contributor (Member)
+## Introfuction
+The University Complaint Management System is a Java-based application designed to streamline the process of managing complaints within a university. This system allows students to lodge complaints and administrators to manage and resolve these complaints efficiently.
+
+## Features
+<ul>
+  <li>Student Module: Students can register, login, and submit complaints.</li>
+  <li>Admin Module: Administrators can view, categorize, and resolve complaints.</li>
+  <li>Complaint Tracking: Track the status of complaints from submission to resolution.</li>
+  <li>Notification System: Email notifications to keep students updated on their complaint status.</li>
+  <li>Reporting: Generate reports based on various criteria for analysis and decision-making.</li>
+</ul>
+
+## Technologies Used
+<ul>
+  <li>Java: The core programming language used.</li>
+  <li>MySQL: Database management system for storing complaint data.</li>
+  <li>Servlets and JSP: For handling HTTP requests and responses.</li>
+  <li>HTML/CSS: For front-end design.</li>
+  <li>Maven: For project build and dependency management.</li>
+</ul>
+
+## Project Contributors
 
 <table>
   <tr>
