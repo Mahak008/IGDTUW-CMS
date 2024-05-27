@@ -90,7 +90,7 @@ The University Complaint Management System is a Java-based application designed 
         </a>
     </td>
     <td  align="center">
-      <img src="https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/8ba3e687-6a1f-4e46-a455-107b0833bf1c" width=150px height=150px />
+      <img src="https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/b32d3974-0c7b-4ca5-81c7-3d2f632e06a8" width=150px height=150px />
       <h4>Bharti Rana</h4>
         <a href="https://github.com/bharti2430">
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="bharti2430" height="30" width="40" />
@@ -100,7 +100,7 @@ The University Complaint Management System is a Java-based application designed 
         </a>
     </td>
     <td  align="center">
-      <img src="https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/3cf94208-f960-47b7-95c0-d472f7f52877" width=150px height= 150px />
+      <img src="https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/329561c9-2bfd-4b63-abbe-e8a866a63031" width=150px height= 150px />
       <h4>Mahak Garg</h4>
         <a href="https://github.com/Mahak008">
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="Mahak008" height="30" width="40" />
@@ -110,7 +110,7 @@ The University Complaint Management System is a Java-based application designed 
         </a>
     </td>
     <td  align="center">
-      <img src="https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/07d4831b-ff78-430d-8ca7-a28a07359a38" width=150px height=150px />
+      <img src="https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/2d45af14-7c12-440b-aece-2d88c7c87165" width=150px height=150px />
       <h4>Sapna Singhal</h4>
         <a href="https://www.github.com/sapnasinghal22">
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="sapnasinghal22" height="30" width="40" />
