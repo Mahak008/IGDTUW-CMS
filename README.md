@@ -7,7 +7,6 @@ The University Complaint Management System is a Java-based application designed 
   <li>Admin Module: Administrators can view, categorize, and resolve complaints.</li>
   <li>Complaint Tracking: Track the status of complaints from submission to resolution.</li>
   <li>Notification System: Email notifications to keep students updated on their complaint status.</li>
-  <li>Reporting: Generate reports based on various criteria for analysis and decision-making.</li>
 </ul>
 
 ## Technologies Used
@@ -85,27 +84,37 @@ The University Complaint Management System is a Java-based application designed 
     <td  align="center">
       <h4>Anisha</h4>
         <a href="https://github.com/Miss-Anisha">Github</a>
-        <a href="https://www.linkedin.com/in/anisha-premi/">Linkedin</a>
+        <a href="https://www.linkedin.com/in/anisha-premi/">
+          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+        </a>
     </td>
     <td  align="center">
       <h4>Bharti Rana</h4>
         <a href="https://github.com/bharti2430">Github</a>
-        <a href="https://www.linkedin.com/in/bharti-rana304/">Linkedin</a>
+        <a href="https://www.linkedin.com/in/bharti-rana304/">
+          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+        </a>
     </td>
     <td  align="center">
       <h4>Mahak Garg</h4>
         <a href="https://github.com/Mahak008">Github</a>
-        <a href="https://linkedin.com/in/mahakgarg/">Linkedin</a>
+        <a href="https://linkedin.com/in/mahakgarg" target="_blank">
+          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+        </a>
     </td>
     <td  align="center">
       <h4>Sapna Singhal</h4>
         <a href="https://www.github.com/sapnasinghal22">Github</a>
-        <a href="https://www.linkedin.com/in/sapnasinghal-/">Linkedin</a>
+        <a href="https://www.linkedin.com/in/sapnasinghal-/">
+          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+        </a>
     </td>
     <td  align="center">
       <h4>Shruti Jain</h4>
         <a href="https://www.github.com/">Github</a>
-        <a href="https://www.linkedin.com/in/shruti-jain-a0840724a/">Linkedin</a>
+        <a href="https://www.linkedin.com/in/shruti-jain-a0840724a/">
+          <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mahakgarg" height="30" width="40">
+        </a>
     </td>
   </tr>
 </table>
