@@ -100,7 +100,7 @@ The University Complaint Management System is a Java-based application designed 
         </a>
     </td>
     <td  align="center">
-      <img src="https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/5cc0ade1-d756-42c4-b015-daf2ecb51ff1" width=150px height= 150px />
+      <img src="https://github.com/Mahak008/IGDTUW-CMS/assets/88129955/8eff63a4-5f0c-4217-905d-bdd13eb03d94" width=150px height= 150px />
       <h4>Mahak Garg</h4>
         <a href="https://github.com/Mahak008">
           <img align="center" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="Mahak008" height="30" width="40" />
