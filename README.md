@@ -131,3 +131,7 @@ The University Complaint Management System is a Java-based application designed 
     </td>
   </tr>
 </table>
+
+<p align = "center">
+  Show some ❤️&nbsp; by giving <img src="https://imgur.com/o7ncZFp.jpg" height=25px width=25px> to this repo
+</p>
